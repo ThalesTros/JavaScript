@@ -2,10 +2,15 @@ function carregar() {
     var msg = document.querySelector('div#msg')
     var imagem = document.querySelector('img#imagem')
     var data = new Date()
-    var hora = 22//data.getHours()
-    //var minuto = data.getMinutes()
+    var hora = data.getHours()
+    var minuto = data.getMinutes()
 
-    msg.innerHTML = `Agora são <strong>${hora}:${minuto}</strong> horas`
+    if (minuto < 10) {
+        msg.innerHTML = `Agora são <strong>${hora}:0${minuto}</strong> horas`
+    } else {
+        msg.innerHTML = `Agora são <strong>${hora}:${minuto}</strong> horas`
+    }
+   
 
     if (hora >= 0 && hora < 12) {
         //BOM DIA
